@@ -14,9 +14,7 @@ class DishDetail extends Component {
   }
 
   renderDish(dish) {
-    if (dish == null) {
-      return <div></div>;
-    }
+    if (dish == null) return <div></div>;
     return (
       <div className="col-12 col-md-5 m-1">
         <Card>
@@ -31,7 +29,8 @@ class DishDetail extends Component {
   }
 
   renderComments(comments) {
-    if (comments == null) {
+    console.log(comments, 32);
+    if (!comments.length) {
       return <div></div>;
     }
     const showcmnts = comments.map((cmnt) => {
@@ -63,6 +62,7 @@ class DishDetail extends Component {
     if (dish == null) {
       return <div></div>;
     }
+    console.log(dish);
     const dishItem = this.renderDish(dish);
     const dishComments = this.renderComments(dish.comments);
     return (
