@@ -1,18 +1,7 @@
 import React, { Component } from "react";
-import {
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardBody,
-  CardTitle,
-  CardText
-} from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap";
 
 class DishDetail extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderDish(dish) {
     if (dish == null) return <div></div>;
     return (
@@ -29,7 +18,6 @@ class DishDetail extends Component {
   }
 
   renderComments(comments) {
-    console.log(comments, 32);
     if (!comments.length) {
       return <div></div>;
     }
@@ -62,7 +50,6 @@ class DishDetail extends Component {
     if (dish == null) {
       return <div></div>;
     }
-    console.log(dish);
     const dishItem = this.renderDish(dish);
     const dishComments = this.renderComments(dish.comments);
     return (
